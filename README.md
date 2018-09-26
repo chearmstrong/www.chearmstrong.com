@@ -1,21 +1,19 @@
-# gatsby-starter-dimension-v2
+# www.chearmstrong.com 👷
 
-**This is a starter for Gatsby.js V2.**
+This is the repo for my personal static site, built using [Gatsby.js](https://www.gatsbyjs.org/) and the [Dimension](https://github.com/ChangoMan/gatsby-starter-dimension) starter.
 
-**The older V1 version of this starter can be found at:**
-<br/>
-**https://github.com/ChangoMan/gatsby-starter-dimension**
+This is very much a work in progress - I wanted to know a little more about Gatsby, React and CirlcleCI. 🤓
 
-Gatsby.js V2 starter based on the Dimension site template, designed by HTML5 UP. Check out https://codebushi.com/gatsby-starters/ for more Gatsby starters and templates.
+## Developing 💻
 
-## Preview
+Run `yarn develop` in the terminal to start the dev site and browse to `localhost:8000` in your browser.
 
-http://gatsby-dimension-v2.surge.sh/
+## Building 📦
 
-## Installation
+Run `yarn build`.
 
-Install this starter (assuming Gatsby is installed) by running from your CLI:
-<br/>
-`gatsby new gatsby-starter-dimension https://github.com/codebushi/gatsby-starter-dimension-v2`
+## Deploying 🚀
 
-Run `gatsby develop` in the terminal to start the dev site.# www.chearmstrong.com
+The site is hosted in AWS S3, and deployed automatically from `master` using [CircleCI](https://circleci.com).
+
+Run `yarn deploy`.
