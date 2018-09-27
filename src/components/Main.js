@@ -7,10 +7,8 @@ import pic02 from '../images/pic02.jpg'
 
 import { social, aboutMe, current } from '../data/content'
 
-// HELPERS
-
-const getSocialSites = list => list.map((item, idx) => <li key={`social-${idx}`}><a href={item.url} className={item.icon}><span className="label">{item.name}</span></a></li>)
-const getSkills = list => list.map((item, idx) => <li key={`skills-${idx}`}>{item}</li>)
+import SocialIcons from './social-icons'
+import BulletList from './bullet-list'
 
 // MAIN
 
@@ -27,9 +25,7 @@ class Main extends React.Component {
           <span className="image main"><img src={pic01} alt="" /></span>
           {current}
           <h3>My skills</h3>
-          <ul>
-            {getSkills(aboutMe.skills)}
-          </ul>
+          <BulletList listItems={aboutMe.skills} listName="skills" />
           {close}
         </article>
 
@@ -60,9 +56,7 @@ class Main extends React.Component {
               <li><input type="reset" value="Reset" /></li>
             </ul>
           </form>
-            <ul className="icons">
-              {getSocialSites(social)}
-            </ul>
+          <SocialIcons socialSites={social} />
           {close}
         </article>
 
