@@ -36,5 +36,16 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_TOKEN,
       },
     },
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+          trackingId: 'UA-126799088-1',
+          head: false,
+          anonymize: true, // @NOTE enabled for GDPR
+          respectDNT: true,
+          exclude: [],
+          cookieDomain: 'chearmstrong.com'
+      },
+    },
   ],
 }
