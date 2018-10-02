@@ -1,16 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { aboutMe } from '../data/content'
-
 const Footer = (props) => (
     <footer id="footer" style={props.timeout ? {display: 'none'} : {}}>
-        <p className="copyright">&copy; {aboutMe.name}</p>
+        <p><a href="https://github.com/chearmstrong/www.chearmstrong.com" title="GitHub"><i class="fa fa-github"></i> View source on GitHub</a></p>
+        <p><span className="copyright">&copy; {props.name}</span></p>
     </footer>
 )
 
 Footer.propTypes = {
-    timeout: PropTypes.bool
+    timeout: PropTypes.bool,
+    name: PropTypes.string,
 }
 
 export default Footer

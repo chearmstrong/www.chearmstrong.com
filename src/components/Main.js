@@ -1,14 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Markdown from 'markdown-to-jsx'
 
 import pic01 from '../images/pic01.jpg'
 import pic02 from '../images/pic02.jpg'
 // import pic03 from '../images/pic03.jpg'
 
-import { social, aboutMe, current } from '../data/content'
-
 import SocialIcons from './social-icons'
 import BulletList from './bullet-list'
+
 
 // MAIN
 
@@ -23,9 +23,9 @@ class Main extends React.Component {
         <article id="about-me" className={`${this.props.article === 'about-me' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
           <h2 className="major">About Me</h2>
           <span className="image main"><img src={pic01} alt="" /></span>
-          {current}
+          <Markdown>{this.props.aboutMe.description}</Markdown>
           <h3>My skills</h3>
-          <BulletList listItems={aboutMe.skills} listName="skills" />
+          <BulletList listItems={this.props.aboutMe.skills} listName="skills" />
           {close}
         </article>
 
@@ -56,7 +56,7 @@ class Main extends React.Component {
               <li><input type="reset" value="Reset" /></li>
             </ul>
           </form>
-          <SocialIcons socialSites={social} />
+          <SocialIcons socialSites={this.props.socials} />
           {close}
         </article>
 
@@ -70,7 +70,9 @@ Main.propTypes = {
   article: PropTypes.string,
   articleTimeout: PropTypes.bool,
   onCloseArticle: PropTypes.func,
-  timeout: PropTypes.bool
+  timeout: PropTypes.bool,
+  aboutMe: PropTypes.object,
+  socials: PropTypes.array,
 }
 
 export default Main
