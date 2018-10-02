@@ -29,6 +29,7 @@ const mapSocialsData = R.compose(
   R.path(['data', 'allContentfulSocials', 'edges'])
 )
 
+// MAIN
 class IndexPage extends React.Component {
   constructor(props) {
     super(props)
