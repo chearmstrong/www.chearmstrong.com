@@ -1,8 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { aboutMe } from '../data/content'
-
 const Header = (props) => (
     <header id="header" style={props.timeout ? {display: 'none'} : {}}>
         <div className="logo">
@@ -10,8 +8,8 @@ const Header = (props) => (
         </div>
         <div className="content">
             <div className="inner">
-                <h1>{aboutMe.name}</h1>
-                <p>{aboutMe.intro}</p>
+                <h1>{props.name}</h1>
+                <p>{props.intro}</p>
             </div>
         </div>
         <nav>
@@ -26,7 +24,9 @@ const Header = (props) => (
 
 Header.propTypes = {
     onOpenArticle: PropTypes.func,
-    timeout: PropTypes.bool
+    timeout: PropTypes.bool,
+    name: PropTypes.string,
+    intro: PropTypes.string,
 }
 
 export default Header

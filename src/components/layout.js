@@ -5,8 +5,6 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import '../assets/scss/main.scss'
 
-import aboutMe from '../data/content.js'
-
 const Layout = ({ children, location }) => {
 
   let content;
