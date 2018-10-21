@@ -36,14 +36,16 @@ jobs:
       # run tests!
       # - run: yarn test
 
-      - run: sudo apt-get update && sudo apt-get install -y python-dev
-      - run: sudo curl -O https://bootstrap.pypa.io/get-pip.py
-      - run: sudo python get-pip.py
-      - run: sudo pip install awscli --upgrade
-      - run: aws --version
-      - run: aws s3 ls
       - deploy:
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              yarn run deploy
+              echo 'deploying MASTER to S3'
+              sudo apt-get update && sudo apt-get install -y python-dev
+              sudo curl -O https://bootstrap.pypa.io/get-pip.py
+              sudo python get-pip.py
+              sudo pip install awscli --upgrade
+              aws --version
+              yarn run deploy 
+            else
+              echo 'no deployment needed'
             fi
