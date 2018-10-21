@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/chearmstrong/www.chearmstrong.com/tree/master.svg?style=svg)](https://circleci.com/gh/chearmstrong/www.chearmstrong.com/tree/master)
+
 # www.chearmstrong.com 👷
 
 This is the repo for my personal static site, built using [Gatsby.js](https://www.gatsbyjs.org/) and the [Dimension](https://github.com/ChangoMan/gatsby-starter-dimension) starter.
