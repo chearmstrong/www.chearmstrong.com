@@ -1,33 +1,12 @@
 import React from 'react'
 import Layout from '../components/layout'
-
 import Header from '../components/Header'
 import Main from '../components/Main'
 import Footer from '../components/Footer'
-
 import { graphql } from 'gatsby'
-
-import * as R from 'ramda'
-
-// HELPERS
-const mapAboutMeData = R.applySpec({
-  id: R.path(['data', 'allContentfulAboutMe', 'edges', 0, 'node', 'id']),
-  name: R.path(['data', 'allContentfulAboutMe', 'edges', 0, 'node', 'name']),
-  intro: R.path(['data', 'allContentfulAboutMe', 'edges', 0, 'node', 'intro', 'intro']),
-  description: R.path(['data', 'allContentfulAboutMe', 'edges', 0, 'node', 'description', 'description']),
-  skills: R.path(['data', 'allContentfulAboutMe', 'edges', 0, 'node', 'skills']),
-  currentLocation: R.path(['data', 'allContentfulAboutMe', 'edges', 0, 'node', 'currentLocation'])
-})
-
-const mapSocialsData = R.compose(
-  R.map(R.applySpec({
-    id: R.path(['node', 'id']),
-    name: R.path(['node', 'name']),
-    url: R.path(['node', 'url']),
-    icon: R.path(['node', 'icon'])
-  })),
-  R.path(['data', 'allContentfulSocials', 'edges'])
-)
+import mapAboutMeData from '../utils/map-about-me-data'
+import mapSocialsData from '../utils/map-socials-data'
+import mapProjectsData from '../utils/map-projects-data'
 
 // MAIN
 class IndexPage extends React.Component {
@@ -41,8 +20,10 @@ class IndexPage extends React.Component {
       article: '',
       loading: 'is-loading',
       aboutMe: mapAboutMeData(this.props),
-      socials: mapSocialsData(this.props)
+      socials: mapSocialsData(this.props),
+      projects: mapProjectsData(this.props)
     }
+
     this.handleOpenArticle = this.handleOpenArticle.bind(this)
     this.handleCloseArticle = this.handleCloseArticle.bind(this)
   }
@@ -120,6 +101,7 @@ class IndexPage extends React.Component {
               onCloseArticle={this.handleCloseArticle}
               aboutMe={this.state.aboutMe}
               socials={this.state.socials}
+              projects={this.state.projects}
             />
             <Footer timeout={this.state.timeout} name={this.state.aboutMe.name}/>
           </div>
@@ -134,28 +116,40 @@ export default IndexPage
 
 // PAGE QUERY
 export const pageQuery = graphql`
-  query Content {
-    allContentfulAboutMe {  
-      edges {
-        node {
-          id
-          name
-          intro { intro }
-          description { description }
-          skills
-          currentLocation {lat lon }
-        }
-      } 
-    }
-    allContentfulSocials {
-      edges {
-          node {
-              id
-              name
-              url
-              icon
-          }
+query Content {
+  allContentfulAboutMe {
+    edges {
+      node {
+        id
+        name
+        intro { intro }
+        description { description }
+        skills
+        currentLocation { lat lon }
       }
     }
   }
+  allContentfulSocials {
+    edges {
+        node {
+            id
+            name
+            url
+            icon
+        }
+    }
+  }
+  allContentfulProjects {
+    edges {
+        node {
+            id
+            name
+            url
+            icon
+            technologies
+            details { details }
+        }
+    }
+  }
+}
 `

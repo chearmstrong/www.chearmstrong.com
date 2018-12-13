@@ -8,8 +8,8 @@ const BulletList = (props) => {
 }
 
 BulletList.propTypes = {
-  listItems: PropTypes.array.isRequired,
-  listName: PropTypes.string.isRequired
+  listItems: PropTypes.array,
+  listName: PropTypes.string
 }
 
 export default BulletList

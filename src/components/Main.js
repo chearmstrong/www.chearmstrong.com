@@ -2,22 +2,18 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Markdown from 'markdown-to-jsx'
 
-// import pic01 from '../images/pic01.jpg'
-// import pic02 from '../images/pic02.jpg'
-// import pic03 from '../images/pic03.jpg'
-
 import * as aboutMeImg from '../images/blake-connally-373084-unsplash.jpg'
 import * as projectsImg from '../images/piotr-cichosz-414544-unsplash.jpg'
 
 import SocialIcons from './social-icons'
 import BulletList from './bullet-list'
+import ProjectList from './project-list'
 import Map from './Map'
 
 import config from '../config'
 
 
 // MAIN
-
 class Main extends React.Component {
   render() {
 
@@ -38,9 +34,10 @@ class Main extends React.Component {
         </article>
 
         <article id="projects" className={`${this.props.article === 'projects' ? 'active' : ''} ${this.props.articleTimeout ? 'timeout' : ''}`} style={{display:'none'}}>
-          <h2 className="major">Projects</h2>
+          <h2 className="major">Recent Projects</h2>
           <span className="image main"><img src={projectsImg} alt="" /></span>
-          <p>Check back soon...</p>
+          <ProjectList projects={this.props.projects} />
+          <p>More projects coming soon...</p>
           {close}
         </article>
 
