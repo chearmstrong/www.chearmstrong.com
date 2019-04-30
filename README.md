@@ -16,6 +16,6 @@ Run `yarn build`.
 
 ## Deploying 🚀
 
-The site is hosted in AWS S3, and deployed automatically from `master` using [CircleCI](https://circleci.com), or when content is updated on Contentful (triggered by a webhook).
+The site is hosted in AWS S3, and deployed automatically using [GitHub Actions](https://github.com/chearmstrong/www.chearmstrong.com/actions), with a push to `master` or when content is updated at Contentful (triggered by a webhook).
 
-Run `yarn deploy`.
+Locally, run `yarn deploy`.
