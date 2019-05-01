@@ -73,6 +73,14 @@
 			}
 		}
 
+		&.cert-badge {
+			display: block;
+			margin: 0;
+			width: 8vw;
+			height: auto;
+			min-width: 150px;
+		}
+
 		@include breakpoint(small) {
 			&.main {
 				margin: (_size(element-margin) * 1) 0;
