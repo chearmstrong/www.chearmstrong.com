@@ -7,6 +7,7 @@ import { graphql } from 'gatsby'
 import mapAboutMeData from '../utils/map-about-me-data'
 import mapSocialsData from '../utils/map-socials-data'
 import mapProjectsData from '../utils/map-projects-data'
+import mapAwsData from '../utils/map-aws-data'
 
 // MAIN
 class IndexPage extends React.Component {
@@ -21,7 +22,8 @@ class IndexPage extends React.Component {
       loading: 'is-loading',
       aboutMe: mapAboutMeData(this.props),
       socials: mapSocialsData(this.props),
-      projects: mapProjectsData(this.props)
+      projects: mapProjectsData(this.props),
+      aws: mapAwsData(this.props)
     }
 
     this.handleOpenArticle = this.handleOpenArticle.bind(this)
@@ -103,7 +105,7 @@ class IndexPage extends React.Component {
               socials={this.state.socials}
               projects={this.state.projects}
             />
-            <Footer timeout={this.state.timeout} name={this.state.aboutMe.name}/>
+            <Footer aws={this.state.aws} timeout={this.state.timeout} name={this.state.aboutMe.name}/>
           </div>
           <div id="bg"></div>
         </div>
@@ -148,6 +150,16 @@ query Content {
             icon
             technologies
             details { details }
+        }
+    }
+  }
+  allContentfulAws {
+    edges {
+        node {
+            id
+            name
+            url
+            badge { file { url } }
         }
     }
   }
