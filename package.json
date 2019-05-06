@@ -20,7 +20,7 @@
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-helmet": "^5.2.0",
-    "snyk": "^1.104.2"
+    "snyk": "^1.161.1"
   },
   "keywords": [
     "gatsby",
@@ -37,7 +37,8 @@
     "format": "prettier --write '**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1",
     "snyk-protect": "snyk protect",
-    "prepare": "yarn snyk-protect"
+    "prepare": "yarn snyk-protect",
+    "prepublish": "npm run snyk-protect"
   },
   "devDependencies": {
     "prettier": "^1.15.3"
