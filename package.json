@@ -38,7 +38,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "snyk-protect": "snyk protect",
     "prepare": "yarn snyk-protect",
-    "prepublish": "npm run snyk-protect"
+    "prepublish": "yarn snyk-protect"
   },
   "devDependencies": {
     "prettier": "^1.15.3"
