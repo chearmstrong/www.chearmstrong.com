@@ -28,7 +28,7 @@ module.exports = {
     //     username: `@chearmstrong`,
     //     limit: 200,
     //   },
-    // },  
+    // },
     {
       resolve: 'gatsby-source-contentful',
       options: {

@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Markdown from 'markdown-to-jsx'
 
-import BulletList from './bullet-list'
+import BulletList from './Bullet-List'
 
 const ProjectList = (props) => {
   const items = props.projects.map((item) => {

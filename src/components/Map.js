@@ -2,12 +2,12 @@ import React, { Component } from 'react'
 import GoogleMapReact from 'google-map-react'
 
 import config from '../config'
- 
+
 class SimpleMap extends Component {
   static defaultProps = {
     zoom: 11
   }
- 
+
   render() {
     return (
       // Important! Always set the container height explicitly
@@ -22,5 +22,5 @@ class SimpleMap extends Component {
     )
   }
 }
- 
+
 export default SimpleMap;

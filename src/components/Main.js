@@ -5,9 +5,9 @@ import Markdown from 'markdown-to-jsx'
 import * as aboutMeImg from '../images/blake-connally-373084-unsplash.jpg'
 import * as projectsImg from '../images/piotr-cichosz-414544-unsplash.jpg'
 
-import SocialIcons from './social-icons'
-import BulletList from './bullet-list'
-import ProjectList from './project-list'
+import SocialIcons from './Social-Icons'
+import BulletList from './Bullet-List'
+import ProjectList from './Project-List'
 import Map from './Map'
 
 import config from '../config'
