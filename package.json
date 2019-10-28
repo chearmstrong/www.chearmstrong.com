@@ -32,7 +32,8 @@
   "scripts": {
     "prebuild": "rm -rf .cache",
     "build": "gatsby build",
-    "deploy": "yarn build && aws s3 sync public/ s3://www.chearmstrong.com --delete",
+    "predeploy": "yarn build",
+    "deploy": "aws s3 sync public/ s3://www.chearmstrong.com --delete",
     "dev": "gatsby develop --host localhost",
     "format": "prettier --write '**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1"
