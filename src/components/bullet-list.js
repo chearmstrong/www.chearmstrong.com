@@ -11,7 +11,7 @@ const BulletList = props => {
 
 BulletList.propTypes = {
   listItems: PropTypes.array,
-  listName: PropTypes.string,
+  listName: PropTypes.string
 }
 
 export default BulletList

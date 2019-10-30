@@ -7,7 +7,7 @@ const mapAboutMeData = R.compose(
     intro: R.path(['intro', 'intro']),
     description: R.path(['description', 'description']),
     skills: R.prop('skills'),
-    currentLocation: R.prop('currentLocation'),
+    currentLocation: R.prop('currentLocation')
   }),
   R.path(['data', 'allContentfulAboutMe', 'edges', 0, 'node'])
 )

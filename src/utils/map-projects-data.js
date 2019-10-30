@@ -8,7 +8,7 @@ const mapProjectsData = R.compose(
       url: R.path(['node', 'url']),
       icon: R.path(['node', 'icon']),
       details: R.path(['node', 'details', 'details']),
-      technologies: R.path(['node', 'technologies']),
+      technologies: R.path(['node', 'technologies'])
     })
   ),
   R.path(['data', 'allContentfulProjects', 'edges'])

@@ -23,7 +23,7 @@ class IndexPage extends React.Component {
       aboutMe: mapAboutMeData(this.props),
       socials: mapSocialsData(this.props),
       projects: mapProjectsData(this.props),
-      aws: mapAwsData(this.props),
+      aws: mapAwsData(this.props)
     }
 
     this.handleOpenArticle = this.handleOpenArticle.bind(this)
@@ -45,37 +45,37 @@ class IndexPage extends React.Component {
   handleOpenArticle(article) {
     this.setState({
       isArticleVisible: !this.state.isArticleVisible,
-      article,
+      article
     })
 
     setTimeout(() => {
       this.setState({
-        timeout: !this.state.timeout,
+        timeout: !this.state.timeout
       })
     }, 325)
 
     setTimeout(() => {
       this.setState({
-        articleTimeout: !this.state.articleTimeout,
+        articleTimeout: !this.state.articleTimeout
       })
     }, 350)
   }
 
   handleCloseArticle() {
     this.setState({
-      articleTimeout: !this.state.articleTimeout,
+      articleTimeout: !this.state.articleTimeout
     })
 
     setTimeout(() => {
       this.setState({
-        timeout: !this.state.timeout,
+        timeout: !this.state.timeout
       })
     }, 325)
 
     setTimeout(() => {
       this.setState({
         isArticleVisible: !this.state.isArticleVisible,
-        article: '',
+        article: ''
       })
     }, 350)
   }

@@ -111,7 +111,7 @@ Main.propTypes = {
   onCloseArticle: PropTypes.func,
   timeout: PropTypes.bool,
   aboutMe: PropTypes.object,
-  socials: PropTypes.array,
+  socials: PropTypes.array
 }
 
 export default Main

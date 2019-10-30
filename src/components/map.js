@@ -4,7 +4,7 @@ import GoogleMapReact from 'google-map-react'
 
 class SimpleMap extends Component {
   static defaultProps = {
-    zoom: 11,
+    zoom: 11
   }
 
   render() {

@@ -14,7 +14,7 @@ const SocialIcons = props => {
 }
 
 SocialIcons.propTypes = {
-  socialSites: PropTypes.array,
+  socialSites: PropTypes.array
 }
 
 export default SocialIcons

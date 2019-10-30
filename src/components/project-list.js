@@ -34,7 +34,7 @@ ProjectList.propTypes = {
   name: PropTypes.string,
   url: PropTypes.string,
   details: PropTypes.string,
-  technologies: PropTypes.array,
+  technologies: PropTypes.array
 }
 
 export default ProjectList

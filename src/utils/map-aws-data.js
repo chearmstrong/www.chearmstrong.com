@@ -6,7 +6,7 @@ const mapAwsData = R.compose(
       id: R.path(['node', 'id']),
       name: R.path(['node', 'name']),
       url: R.path(['node', 'url']),
-      badge: R.path(['node', 'badge', 'file', 'url']),
+      badge: R.path(['node', 'badge', 'file', 'url'])
     })
   ),
   R.path(['data', 'allContentfulAws', 'edges'])

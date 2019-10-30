@@ -14,7 +14,7 @@ const Aws = props => {
 }
 
 Aws.propTypes = {
-  certifications: PropTypes.array,
+  certifications: PropTypes.array
 }
 
 export default Aws

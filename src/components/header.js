@@ -53,7 +53,7 @@ Header.propTypes = {
   onOpenArticle: PropTypes.func,
   timeout: PropTypes.bool,
   name: PropTypes.string,
-  intro: PropTypes.string,
+  intro: PropTypes.string
 }
 
 export default Header

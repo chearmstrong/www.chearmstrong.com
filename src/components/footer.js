@@ -24,7 +24,7 @@ const Footer = props => (
 Footer.propTypes = {
   timeout: PropTypes.bool,
   name: PropTypes.string,
-  aws: PropTypes.array,
+  aws: PropTypes.array
 }
 
 export default Footer
