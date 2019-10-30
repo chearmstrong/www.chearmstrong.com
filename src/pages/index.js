@@ -1,13 +1,13 @@
 import React from 'react'
+import { graphql } from 'gatsby'
+import Main from '../components/main'
 import Layout from '../components/layout'
 import Header from '../components/header'
-import Main from '../components/main'
 import Footer from '../components/footer'
-import { graphql } from 'gatsby'
-import mapAboutMeData from '../utils/map-about-me-data'
-import mapSocialsData from '../utils/map-socials-data'
-import mapProjectsData from '../utils/map-projects-data'
 import mapAwsData from '../utils/map-aws-data'
+import mapSocialsData from '../utils/map-socials-data'
+import mapAboutMeData from '../utils/map-about-me-data'
+import mapProjectsData from '../utils/map-projects-data'
 
 // MAIN
 class IndexPage extends React.Component {
@@ -30,20 +30,19 @@ class IndexPage extends React.Component {
     this.handleCloseArticle = this.handleCloseArticle.bind(this)
   }
 
-  componentDidMount () {
+  componentDidMount() {
     this.timeoutId = setTimeout(() => {
-        this.setState({loading: ''});
-    }, 100);
+      this.setState({ loading: '' })
+    }, 100)
   }
 
-  componentWillUnmount () {
+  componentWillUnmount() {
     if (this.timeoutId) {
-        clearTimeout(this.timeoutId);
+      clearTimeout(this.timeoutId)
     }
   }
 
   handleOpenArticle(article) {
-
     this.setState({
       isArticleVisible: !this.state.isArticleVisible,
       article
@@ -60,11 +59,9 @@ class IndexPage extends React.Component {
         articleTimeout: !this.state.articleTimeout
       })
     }, 350)
-
   }
 
   handleCloseArticle() {
-
     this.setState({
       articleTimeout: !this.state.articleTimeout
     })
@@ -81,13 +78,16 @@ class IndexPage extends React.Component {
         article: ''
       })
     }, 350)
-
   }
 
   render() {
     return (
       <Layout location={this.props.location}>
-        <div className={`body ${this.state.loading} ${this.state.isArticleVisible ? 'is-article-visible' : ''}`}>
+        <div
+          className={`body ${this.state.loading} ${
+            this.state.isArticleVisible ? 'is-article-visible' : ''
+          }`}
+        >
           <div id="wrapper">
             <Header
               onOpenArticle={this.handleOpenArticle}
@@ -105,9 +105,13 @@ class IndexPage extends React.Component {
               socials={this.state.socials}
               projects={this.state.projects}
             />
-            <Footer aws={this.state.aws} timeout={this.state.timeout} name={this.state.aboutMe.name}/>
+            <Footer
+              aws={this.state.aws}
+              timeout={this.state.timeout}
+              name={this.state.aboutMe.name}
+            />
           </div>
-          <div id="bg"></div>
+          <div id="bg" />
         </div>
       </Layout>
     )
@@ -118,50 +122,63 @@ export default IndexPage
 
 // PAGE QUERY
 export const pageQuery = graphql`
-query Content {
-  allContentfulAboutMe {
-    edges {
-      node {
-        id
-        name
-        intro { intro }
-        description { description }
-        skills
-        currentLocation { lat lon }
+  query IndexPageContent {
+    allContentfulAboutMe {
+      edges {
+        node {
+          id
+          name
+          intro {
+            intro
+          }
+          description {
+            description
+          }
+          skills
+          currentLocation {
+            lat
+            lon
+          }
+        }
+      }
+    }
+    allContentfulSocials {
+      edges {
+        node {
+          id
+          name
+          url
+          icon
+        }
+      }
+    }
+    allContentfulProjects {
+      edges {
+        node {
+          id
+          name
+          url
+          icon
+          technologies
+          details {
+            details
+          }
+        }
+      }
+    }
+    allContentfulAws {
+      edges {
+        node {
+          id
+          name
+          url
+          badge {
+            file {
+              url
+            }
+          }
+        }
       }
     }
   }
-  allContentfulSocials {
-    edges {
-        node {
-            id
-            name
-            url
-            icon
-        }
-    }
-  }
-  allContentfulProjects {
-    edges {
-        node {
-            id
-            name
-            url
-            icon
-            technologies
-            details { details }
-        }
-    }
-  }
-  allContentfulAws {
-    edges {
-        node {
-            id
-            name
-            url
-            badge { file { url } }
-        }
-    }
-  }
-}
 `
