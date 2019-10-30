@@ -18,6 +18,16 @@
 		z-index: 3;
 		display: none;
 
+		&.movie-critic {
+			.content-box {
+				padding: 2em;
+				background-color: rgba(27,31,34,.85);
+				margin-top: 4em;
+				border-radius: 25px;
+				max-width: 90%;
+			}
+		}
+
 		article {
 			@include vendor('transform', 'translateY(0.25rem)');
 			@include vendor('transition', (

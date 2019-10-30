@@ -2,9 +2,9 @@ require('dotenv').config()
 
 module.exports = {
   siteMetadata: {
-    title: "Ché Armstrong - Software Engineer",
-    author: "Ché Armstrong",
-    description: "JavaScript, Node.js, Alexa, Google Home."
+    title: 'Ché Armstrong - Software Engineer',
+    author: 'Ché Armstrong',
+    description: 'JavaScript, Node.js, Alexa, Google Home.',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -22,13 +22,6 @@ module.exports = {
     },
     'gatsby-plugin-sass',
     'gatsby-plugin-offline',
-    // {
-    //   resolve: `gatsby-source-medium`,
-    //   options: {
-    //     username: `@chearmstrong`,
-    //     limit: 200,
-    //   },
-    // },
     {
       resolve: 'gatsby-source-contentful',
       options: {
@@ -39,12 +32,12 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-          trackingId: 'UA-126799088-1',
-          head: false,
-          anonymize: true, // @NOTE enabled for GDPR
-          respectDNT: true,
-          exclude: [],
-          cookieDomain: 'chearmstrong.com'
+        trackingId: 'UA-126799088-1',
+        head: false,
+        anonymize: true, // @NOTE enabled for GDPR
+        respectDNT: true,
+        exclude: [],
+        cookieDomain: 'chearmstrong.com',
       },
     },
   ],
