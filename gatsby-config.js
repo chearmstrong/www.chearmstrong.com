@@ -4,7 +4,7 @@ module.exports = {
   siteMetadata: {
     title: 'Ché Armstrong - Software Engineer',
     author: 'Ché Armstrong',
-    description: 'JavaScript, Node.js, Alexa, Google Home.'
+    description: 'Software Engineer, JavaScript, Node.js, Alexa, Bixby, Google Home, Movie Critic, Voice First.'
   },
   plugins: [
     'gatsby-plugin-react-helmet',
