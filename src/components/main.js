@@ -71,9 +71,7 @@ class Main extends React.Component {
           <h2 className="major">Contact</h2>
           <form
             method="post"
-            action={`${config.contact.FORM_ENDPOINT}${
-              config.contact.EMAIL_ADDRESS
-            }`}
+            action={config.contact.FORM_ENDPOINT}
           >
             <div className="field half first">
               <label htmlFor="name">Name</label>
