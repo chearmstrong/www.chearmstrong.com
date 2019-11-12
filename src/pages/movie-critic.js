@@ -1,7 +1,7 @@
 /**
  * Tried to do this page using a Function Component and React Hooks.
  * The template uses Class Components for other pages - may look to
- * upodate these in the future. Still a WIP.
+ * update these in the future. Still a WIP.
  */
 
 import { graphql } from 'gatsby'
@@ -10,7 +10,7 @@ import Layout from '../components/layout'
 import React, { useState, useEffect } from 'react'
 import mapAboutMeData from '../utils/map-about-me-data'
 import mapMovieCriticData from '../utils/map-movie-critic-data'
-import * as movieCriticLogo from '../images/MovieCritic_no_BG.svg'
+import * as movieCriticLogo from '../images/MovieCritic_no_BG.png'
 
 const MovieCriticPage = props => {
   const [loading, setLoading] = useState(true)
