@@ -5,6 +5,7 @@
  */
 
 import { graphql } from 'gatsby'
+import { Helmet } from 'react-helmet'
 import Markdown from 'markdown-to-jsx'
 import Layout from '../components/layout'
 import React, { useState, useEffect } from 'react'
@@ -22,39 +23,40 @@ const MovieCriticPage = props => {
   }, [])
 
   return (
-    <Layout>
-      <div className={`body ${loading ? 'is-loading' : ''}`}>
-        <div id="wrapper">
-          <header id="header">
-            <div className="content">
-              <div className="inner">
-                <img src={movieCriticLogo} alt={title} />
+      <Layout>
+        <Helmet title={title} defer={false} />
+        <div className={`body ${loading ? 'is-loading' : ''}`}>
+          <div id="wrapper">
+            <header id="header">
+              <div className="content">
+                <div className="inner">
+                  <img src={movieCriticLogo} alt={title} />
+                </div>
+              </div>
+            </header>
+            <div
+              id="main"
+              className="movie-critic"
+              style={!loading ? { display: 'flex' } : { display: 'none' }}
+            >
+              <div className="content-box">
+                <Markdown>{description}</Markdown>
               </div>
             </div>
-          </header>
-          <div
-            id="main"
-            className="movie-critic"
-            style={!loading ? { display: 'flex' } : { display: 'none' }}
-          >
-            <div className="content-box">
-              <Markdown>{description}</Markdown>
-            </div>
+            <footer id="footer">
+              <p>
+                <span className="copyright">
+                  &copy; {new Date().getFullYear()}{' '}
+                  <a href="/" title={name}>
+                    {name}
+                  </a>
+                </span>
+              </p>
+            </footer>
           </div>
-          <footer id="footer">
-            <p>
-              <span className="copyright">
-                &copy; {new Date().getFullYear()}{' '}
-                <a href="/" title={name}>
-                  {name}
-                </a>
-              </span>
-            </p>
-          </footer>
+          <div id="bg-movie-critic" />
         </div>
-        <div id="bg-movie-critic" />
-      </div>
-    </Layout>
+      </Layout>
   )
 }
 
