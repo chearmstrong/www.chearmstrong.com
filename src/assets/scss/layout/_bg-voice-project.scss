@@ -6,7 +6,7 @@
 
 /* BG */
 
-	#bg-movie-critic {
+	#bg-voice-project {
 		@include vendor('transform', 'scale(1.0)');
 		-webkit-backface-visibility: hidden;
 		position: fixed;
@@ -46,7 +46,7 @@
 				'transform #{_duration(article)} ease-in-out',
 				'filter #{_duration(article)} ease-in-out'
 			));
-			background-image:		url('../../images/bg-movie-critic.jpg');
+			background-image:		url('../../images/bg-voice-project.jpg');
 			background-position:	center;
 			background-size:		cover;
 			background-repeat:		no-repeat;

@@ -4,9 +4,10 @@ const mapMovieCriticData = R.compose(
   R.applySpec({
     id: R.prop('id'),
     title: R.prop('title'),
-    description: R.path(['description', 'description'])
+    description: R.path(['description', 'description']),
+    logo: R.path(['logo', 0, 'file', 'url'])
   }),
-  R.path(['data', 'allContentfulMovieCritic', 'edges', 0, 'node'])
+  R.path(['data', 'contentfulMovieCritic'])
 )
 
 export default mapMovieCriticData
