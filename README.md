@@ -4,7 +4,7 @@ This is the repo for my personal static site, built using [Gatsby.js](https://ww
 
 I'm also using [Contentful](https://www.contentful.com/) for my site's content.
 
-This is very much a work in progress - I want to know more about Gatsby, React and CirlcleCI. 🤓
+This is very much a work in progress - I want to know more about Gatsby, React and ~CirlcleCI~ GitHub Actions. 🤓
 
 ## Developing 💻
 
