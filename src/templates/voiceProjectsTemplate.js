@@ -15,50 +15,60 @@ import React, { useState, useEffect } from 'react'
 import mapAboutMeData from '../utils/map-about-me-data'
 import mapVoiceProjectData from '../utils/map-voice-project-data'
 
-const VoiceProjectPage = (props) => {
+const VoiceProjectPage = props => {
   const [loading, setLoading] = useState(true)
   const { name } = mapAboutMeData(props)
-  const { title, description, logo } = mapVoiceProjectData(props)
+  const { title, description, logo, youTubeId } = mapVoiceProjectData(props)
 
   useEffect(() => {
     setLoading(false)
   }, [])
 
   return (
-      <Layout>
-        <Helmet title={title} defer={false} />
-        <div className={`body ${loading ? 'is-loading' : ''}`}>
-          <div id="wrapper">
-            <header id="header">
-              <div className="content">
-                <div className="inner">
-                  <img src={logo} alt={title} />
-                </div>
-              </div>
-            </header>
-            <div
-              id="main"
-              className="voice-project"
-              style={!loading ? { display: 'flex' } : { display: 'none' }}
-            >
-              <div className="content-box">
-                <Markdown>{description}</Markdown>
+    <Layout>
+      <Helmet title={title} defer={false} />
+      <div className={`body ${loading ? 'is-loading' : ''}`}>
+        <div id="wrapper">
+          <header id="header">
+            <div className="content">
+              <div className="inner">
+                <img src={logo} alt={title} />
               </div>
             </div>
-            <footer id="footer">
-              <p>
-                <span className="copyright">
-                  &copy; {new Date().getFullYear()}{' '}
-                  <a href="/" title={name}>
-                    {name}
-                  </a>
-                </span>
-              </p>
-            </footer>
+          </header>
+          <div
+            id="main"
+            className="voice-project"
+            style={!loading ? { display: 'flex' } : { display: 'none' }}
+          >
+            <div className="content-box">
+              <Markdown>{description}</Markdown>
+            </div>
           </div>
-          <div id="bg-voice-project" />
+          <footer id="footer">
+            <p>
+              <span className="copyright">
+                &copy; {new Date().getFullYear()}{' '}
+                <a href="/" title={name}>
+                  {name}
+                </a>
+              </span>
+            </p>
+          </footer>
         </div>
-      </Layout>
+        <div id="youtube">
+          <iframe
+            width="560"
+            height="315"
+            src={`https://www.youtube.com/embed/${youTubeId}`}
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          />
+        </div>
+        <div id="bg-voice-project" />
+      </div>
+    </Layout>
   )
 }
 
@@ -71,9 +81,16 @@ export const pageQuery = graphql`
       id
       icon
       title
-      description { description }
-      logo { file { url } }
+      description {
+        description
+      }
+      logo {
+        file {
+          url
+        }
+      }
       slug
+      youTubeId
     }
     allContentfulAboutMe {
       edges {
